@@ -17,3 +17,13 @@ pip install requests
 pip install tabulate
 ```
 
+Also, 
+
+Install GitHub desktop and Login there.
+
+Then choose the repository that you want to clone (in our case, `Major Project 2021`) and choose the folder where it must be saved.
+
+Now open the project and start working on your code. After completing the coding, open GitHub Desktop and Over the bottom left you will find `Commit to main` Area.
+There describe your edit and commit it to Github. After that in the center of screen, Click on Push Origin to change it.
+For safetly choose only your files in the left side of the screen for saving changes.
+
