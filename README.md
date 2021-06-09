@@ -29,6 +29,8 @@ pip install Flask
 pip install requests
 # To tabulate the data fetched from remote mysql
 pip install tabulate
+# To mask the password input
+pip install stdiomask
 ```
 
 ## Applications used for Development
