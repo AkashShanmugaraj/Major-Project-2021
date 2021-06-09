@@ -1,29 +1,64 @@
-# Major-Project-2021
-Hello Barath Giri and Adithya!
+# **Book Store management App**
+### by Vidhya Niketan Public School
 
-This is a private repo for storing the code of the Book Store Management app.
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Since it is a private repository, others wont be able to access the code unless their email is added.
+A user friendly, Commandline interfaced, Book Store managing app, built in Python
 
-To get started, install the following modules.
-Installing the modules is easy. just open Command Prompt and execute the following commands. To install package, you must have enabled `Add to PATH` during the installation.
+## Features
 
-Commands: 
+- Import a HTML file and watch it magically convert to Markdown
+- Drag and drop images (requires your Dropbox account be linked)
+- Import and save files from GitHub, Dropbox, Google Drive and One Drive
+- Drag and drop markdown and HTML files into Dillinger
+- Export documents as Markdown, HTML and PDF
 
-```
+This is a private repository and currently at developmental stage. 
+Upon Completion it will be made available to all
+
+See the [creator's website](https://akashshanmugaraj.wixsite.com/home) 
+
+> This is the best ever commandline app the world has ever seen
+> ~GeeksforGeeks
+
+## Installation
+Some modules are required if you prefer to run the `.py` script directly. Dependencies are optional in `.exe` file
+
+Remember, Python must be a `PATH VARIABLE`
+
+Install the below dependencies:
+
+```shell
+# For OAuth Google Authentication
 pip install Authlib Flask
+# For a micro web framework
 pip install Flask
 pip install requests
+# To tabulate the data fetched from remote mysql
 pip install tabulate
 ```
 
-Also, 
+For production environments...
 
-Install GitHub desktop and Login there.
+```sh
+npm install --production
+NODE_ENV=production node app
+```
 
-Then choose the repository that you want to clone (in our case, `Major Project 2021`) and choose the folder where it must be saved.
+## Applications used for Development
 
-Now open the project and start working on your code. After completing the coding, open GitHub Desktop and Over the bottom left you will find `Commit to main` Area.
-There describe your edit and commit it to Github. After that in the center of screen, Click on Push Origin to change it.
-For safetly choose only your files in the left side of the screen for saving changes.
+The following application were used in the developmental stage
 
+| Application | Purpose |
+| ------ | ------ |
+| [Pycharm](https://www.jetbrains.com/pycharm/) | Python Development and Markdown Editing |
+| [DataGrip](https://www.jetbrains.com/datagrip/) | Database Manipulation |
+| [DBeaver](https://dbeaver.io/) | Database Manipulation|
+| [FreeDB Tech](https://freedb.tech/) | Remote SQL Hosting Server |
+| [HelioHost](https://www.heliohost.org/) | Remote SQL Hosting Server |
+| [GitHub](https://github.com/) and [GitHub Desktop](https://desktop.github.com/) | For software development hosting and Version Control |
+
+
+## License
+
+MIT
