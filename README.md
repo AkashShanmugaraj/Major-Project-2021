@@ -5,20 +5,13 @@
 
 A user friendly, Commandline interfaced, Book Store managing app, built in Python
 
-## Features
-
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
-
 This is a private repository and currently at developmental stage. 
 Upon Completion it will be made available to all
 
 See the [creator's website](https://akashshanmugaraj.wixsite.com/home) 
 
 > This is the best ever commandline app the world has ever seen
+> 
 > ~GeeksforGeeks
 
 ## Installation
@@ -36,13 +29,6 @@ pip install Flask
 pip install requests
 # To tabulate the data fetched from remote mysql
 pip install tabulate
-```
-
-For production environments...
-
-```sh
-npm install --production
-NODE_ENV=production node app
 ```
 
 ## Applications used for Development
