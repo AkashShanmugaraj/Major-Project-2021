@@ -19,19 +19,23 @@ Some modules are required if you prefer to run the `.py` script directly. Depend
 
 Remember, Python must be a `PATH VARIABLE`
 
-Install the below dependencies:
+###Install the below dependencies:
 
+For OAuth Google Authentication
 ```shell
-# For OAuth Google Authentication
 pip install Authlib Flask
-# For a micro web framework
-pip install Flask
-pip install requests
-# To tabulate the data fetched from remote mysql
-pip install tabulate
-# To mask the password input
-pip install stdiomask
 ```
+For a micro web framework
+```pip install Flask
+pip install requests
+```
+To tabulate the data fetched from remote mysql
+
+```pip install tabulate```
+
+To mask the password input
+
+```pip install stdiomask```
 
 ## Applications used for Development
 
