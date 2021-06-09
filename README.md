@@ -47,4 +47,4 @@ The following application were used in the developmental stage
 
 ## License
 
-MIT
+MIT License
