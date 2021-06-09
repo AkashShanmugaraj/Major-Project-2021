@@ -8,7 +8,7 @@ A user friendly, Commandline interfaced, Book Store managing app, built in Pytho
 This is a private repository and currently at developmental stage. 
 Upon Completion it will be made available to all
 
-See the [creator's website](https://akashshanmugaraj.wixsite.com/home) 
+See [Akash's website](https://akashshanmugaraj.wixsite.com/home) 
 
 > This is the best ever commandline app the world has ever seen
 > 
