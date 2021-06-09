@@ -31,11 +31,15 @@ pip install requests
 ```
 To tabulate the data fetched from remote mysql
 
-```pip install tabulate```
+```
+pip install tabulate
+```
 
 To mask the password input
 
-```pip install stdiomask```
+```
+pip install stdiomask
+```
 
 ## Applications used for Development
 
