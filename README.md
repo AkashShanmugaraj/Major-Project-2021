@@ -19,7 +19,7 @@ Some modules are required if you prefer to run the `.py` script directly. Depend
 
 Remember, Python must be a `PATH VARIABLE`
 
-###Install the below dependencies:
+### Install the below dependencies:
 
 For OAuth Google Authentication
 ```shell
