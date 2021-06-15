@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3392bb15-b176-42ea-bceb-9c129e805106" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SQL Connection/sqltest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL Connection/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/Login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL Connection/cmd_spin.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/cmd_spin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL Connection/loops.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/loops.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL Connection/sqlcommands.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/sqlcommands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL Connection/sqltest.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/sqltest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

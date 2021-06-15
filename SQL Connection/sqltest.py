@@ -1,17 +1,8 @@
-import mysql.connector as mysql
-db = mysql.connect(host='localhost', database='bookstore', user='root', password='nevermindmf')
-cur = db.cursor()
+from time import sleep
 
-cur.execute("select BookID from books;")
-data = cur.fetchall()
-print(data)
+print("Processing....done\n")
+sleep(3)
+print("Transaction was Sucessful.\nYou will be redirected to home screen now")
+sleep(5)
 
-def tupletolist(thetuple):
-    newlist = []
-    for i in thetuple:
-        for ii in i:
-            newlist.append(ii)
-    return newlist
-
-new = tupletolist(data)
-print(new)
+print("OK")

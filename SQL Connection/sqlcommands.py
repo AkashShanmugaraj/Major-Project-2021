@@ -4,11 +4,14 @@
 
 #Importing required modules
 import mysql.connector as mysql
+#Userdefined....found in same folder
 from tabulate import tabulate #For tabulating data
 from loops import intsyntaxcheck, bookquantloop, stringvaluecontrol
-#Userdefined....found in same folder
 from cmd_spin import spin
+#Python Modules
 from datetime import datetime
+from os import system
+from time import sleep
 #Userdefined
 db = mysql.connect(host='localhost', database='bookstore', user='root', password='nevermindmf')
 cur = db.cursor()
@@ -124,13 +127,26 @@ def newtransaction():
         cur.execute(f"INSERT INTO transactions VALUES ('{today}',{custphnum},'{bid}',{bnum});")
         cur.execute(f"UPDATE books SET Stocks={bstock-bnum} WHERE BookID='{bid}';")
         db.commit()
+        print("\nTransaction was Sucessful.\nYou will be redirected to home screen now")
+        sleep(5)
+        system('cls')
+        home()
     elif conf == "n":
         print("The transaction was cancelled")
-q = int(input("Do you want to \n\t1. add a book?\n\t2. edit a book? \n\t3. create a new transaction\n......"))
-if q == 1:
-    add_book()
-elif q == 2:
-    edit_book()
-elif q == 3:
-    newtransaction()
+        print("\nTransaction was Unsucessful.\nYou will be redirected to home screen now")
+        sleep(5)
+        system('cls')
+        home()
+def home():
+    q = int(input("Do you want to \n\t1. add a book?\n\t2. edit a book? \n\t3. create a new transaction\n......"))
+    if q == 1:
+        system('cls')
+        add_book()
+    elif q == 2:
+        system('cls')
+        edit_book()
+    elif q == 3:
+        system('cls')
+        newtransaction()
+home()
 db.close()
