@@ -13,5 +13,3 @@ def spin(statement):
         print(statement,i,end = "\r")
         time.sleep(0.25)
     print()
-spin("Connecting to database.....")
-spin("Retrieving Credentials.....")

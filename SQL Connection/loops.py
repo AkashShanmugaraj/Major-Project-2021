@@ -14,7 +14,7 @@ def bookquantloop(availablebooks):
         print(f"Only {availablebooks} Books are available.")
         a = intsyntaxcheck("Enter Required Books: ")
     else:
-        print(f"{a} books were requested")
+        print(f"{a} book(s) were requested")
         return a
 
 #Functions for Syntax Check
@@ -27,11 +27,29 @@ def intsyntaxcheck(inputstatement):
         print("Only integers (1,43,532) are allowed!")
         return intsyntaxcheck(inputstatement)
 
+def stringvaluecontrol(permitttedvalues, inputstatement, errormessage):
+    inputval = input(inputstatement)
+    while inputval not in permitttedvalues:
+        print(errormessage)
+        inputval = input(inputstatement)
+    return inputval
 
-
+def integervaluecontrol(permitttedvalues, inputstatement, errormessage):
+    try:
+        inputval = int(input(inputstatement))
+        while inputval not in permitttedvalues:
+            print(errormessage)
+            inputval = int(input(inputstatement))
+    except ValueError:
+        print("Only integral values are allowed!")
+        inputval = integervaluecontrol(permitttedvalues,inputstatement,errormessage)
+    return inputval
 #FUNCTION CALLING
-print("Now the bookquantloop function is being called....")
+'''print("Now the bookquantloop function is being called....")
 bookquantloop(availablebooks=100)
 print("\n\n")
 print("Now the intsyntaxcheck function is being called....")
 print(intsyntaxcheck("Your Custom Text: "))
+stringinput = stringvaluecontrol(["Akash", "VNPS"], "Enter a string Value: ", "Only Akash and VNPS are Available!")
+integerintput = integervaluecontrol([1,2,4], "Enter an integral Value: ", "Only 1,2 and 4 are Available!")
+print(stringinput, integerintput)'''

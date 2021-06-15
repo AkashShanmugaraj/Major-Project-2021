@@ -6,7 +6,7 @@ import mysql.connector as sql
 import mysql.connector.errors
 import stdiomask
 from cmd_spin import spin
-spin()
+
 db = sql.connect(host='freedb.tech',database='freedbtech_mybookstorevnps',user='freedbtech_vnpsmajorproject', password='qwerty')
 cur = db.cursor()
 

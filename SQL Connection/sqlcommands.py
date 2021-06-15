@@ -5,11 +5,21 @@
 #Importing required modules
 import mysql.connector as mysql
 from tabulate import tabulate #For tabulating data
-from loops import intsyntaxcheck, bookquantloop #Userdefined....found in same folder
-from cmd_spin import spin #Userdefined
+from loops import intsyntaxcheck, bookquantloop, stringvaluecontrol
+#Userdefined....found in same folder
+from cmd_spin import spin
+from datetime import datetime
+#Userdefined
 db = mysql.connect(host='localhost', database='bookstore', user='root', password='nevermindmf')
 cur = db.cursor()
 
+#Non SQl Funcitons
+def tupletolist(thetuple):
+    newlist = []
+    for i in thetuple:
+        for ii in i:
+            newlist.append(ii)
+    return newlist
 
 # Function for adding a book
 def add_book():
@@ -88,7 +98,10 @@ def edit_book():
                    tablefmt='fancy_grid'))
 
 def newtransaction():
-    bid = input("Enter BookID: ")
+    cur.execute("select BookID from books;")
+    data = cur.fetchall()
+    data = tupletolist(data)
+    bid = stringvaluecontrol(data, "Enter Book ID: ", "Requested Book Not available in directory")
     cur.execute(f'select BookName, Price, Stocks from books where BookID = "{bid}"')
     rawdata = cur.fetchall()
     newdata = []
@@ -100,12 +113,24 @@ def newtransaction():
     print(tabulate(newdata, headers=["Book Name", "Price",'Available Stocks'],tablefmt='fancy_grid'))
     bnum = bookquantloop(bstock)
     print(f"Your total amount will be {bnum*bprice}")
-    spin("Processing Transaction.......")
-    cur.execute(f"UPDATE books SET Stocks={bstock+bnum} WHERE BookID='{bid}';")
-    db.commit()
-q = input("Do you want to \n\t1. add a book?\n\t2. edit a book? \n......")
-if q == "2":
+
+
+    conf = stringvaluecontrol(["y", "n"], "Do you want to proceed with your order? [y/n]: ", "Only y and n are allowed!")
+    if conf == 'y':
+        custphnum = int(input("Enter the Phone number of the customer: "))
+        custphnum = int(input("Reconfirm the Phone number of the customer: "))
+        spin('Processing Transaction.....')
+        today = datetime.now()
+        cur.execute(f"INSERT INTO transactions VALUES ('{today}',{custphnum},'{bid}',{bnum});")
+        cur.execute(f"UPDATE books SET Stocks={bstock-bnum} WHERE BookID='{bid}';")
+        db.commit()
+    elif conf == "n":
+        print("The transaction was cancelled")
+q = int(input("Do you want to \n\t1. add a book?\n\t2. edit a book? \n\t3. create a new transaction\n......"))
+if q == 1:
+    add_book()
+elif q == 2:
     edit_book()
-elif q == "1":
+elif q == 3:
     newtransaction()
 db.close()
