@@ -11,10 +11,12 @@ I will however post a message after a new work is assigned.
 This might be hard but this makes our work uniform and systematic.
 
 ##This week TODO's
+
 ####Last Updated for 19th June - 26th June
 - Install `Pycharm`, `DBeaver`, `Github Desktop`
 - Gather insights about Sub Categories which are marked Thinking
 - Go Through the files on the repository [All floders except Adithya's Files]
+
 
 ###Next week expected TODO's
 
