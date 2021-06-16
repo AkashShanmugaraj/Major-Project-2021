@@ -1,7 +1,7 @@
 #This module has some SQL Functions.
 #NOTE: Kindly define every sub_utilities (adding a book, deleting a book, new tansaction etc) as a seperate function.
 #It helps us prevent complex if loops , long line of code and also it helps us for recursion
-
+#Navigation Systems are currently under development
 #Importing required modules
 import mysql.connector as mysql
 #Userdefined....found in same folder
@@ -12,17 +12,28 @@ from cmd_spin import spin
 from datetime import datetime
 from os import system
 from time import sleep
+import keyboard as kb
+import pyfiglet
 #Userdefined
 db = mysql.connect(host='localhost', database='bookstore', user='root', password='nevermindmf')
 cur = db.cursor()
 
 #Non SQl Funcitons
+# When we fetch records from a database, it will be a tuple in a list. The below function changes it to list in a list (nested list). This format is crucial to tabulate the data
 def tupletolist(thetuple):
     newlist = []
     for i in thetuple:
         for ii in i:
             newlist.append(ii)
     return newlist
+
+# After a select command is executed, this function can be called. This will fetch the records 
+def tabulating():
+    rawdata = cur.fetchall()
+    newdata = []
+    for data in rawdata:
+        newdata.append(list(data))
+    return newdata
 
 # Function for adding a book
 def add_book():
@@ -106,14 +117,11 @@ def newtransaction():
     data = tupletolist(data)
     bid = stringvaluecontrol(data, "Enter Book ID: ", "Requested Book Not available in directory")
     cur.execute(f'select BookName, Price, Stocks from books where BookID = "{bid}"')
-    rawdata = cur.fetchall()
-    newdata = []
-    for data in rawdata:
-        newdata.append(list(data))
-    bprice = newdata[0][1]
-    bstock = newdata[0][2]
+    booksdata = tabulating()
+    bprice = booksdata[0][1]
+    bstock = booksdata[0][2]
     print("The requested book is: ")
-    print(tabulate(newdata, headers=["Book Name", "Price",'Available Stocks'],tablefmt='fancy_grid'))
+    print(tabulate(booksdata, headers=["Book Name", "Price",'Available Stocks'],tablefmt='fancy_grid'))
     bnum = bookquantloop(bstock)
     print(f"Your total amount will be {bnum*bprice}")
 
@@ -138,7 +146,8 @@ def newtransaction():
         system('cls')
         home()
 def home():
-    q = int(input("Do you want to \n\t1. add a book?\n\t2. edit a book? \n\t3. create a new transaction\n......"))
+    print(pyfiglet.figlet_format("Welcome Akash Shanmugaraj", font = "digital" ))
+    q = int(input("Do you want to \n\t1. add a book?\n\t2. edit a book? \n\t3. create a new transaction\n\t4.view transactions?\n\t7. Exit App\n...... "))
     if q == 1:
         system('cls')
         add_book()
@@ -148,5 +157,18 @@ def home():
     elif q == 3:
         system('cls')
         newtransaction()
+    elif q == 4:
+        system('cls')
+        viewtransaction()
+    elif q == 7:
+        exit()
+def redirect_home():
+    system('cls')
+    home()
+
+
+
+
+print(pyfiglet.figlet_format("Book store Management App", font="slant"))
 home()
 db.close()
