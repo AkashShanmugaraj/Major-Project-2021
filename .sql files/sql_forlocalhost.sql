@@ -9,6 +9,7 @@ PubYear int,
 Stocks int not Null,
 Price int Not null
 );
+
  create table if not exists customer(
  CustID int Not null,
  CustName tinytext not null,
