@@ -1,4 +1,4 @@
-# **Book Store management App**
+# Book Store management App
 ### by Vidhya Niketan Public School
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
