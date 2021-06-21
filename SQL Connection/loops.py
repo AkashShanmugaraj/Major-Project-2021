@@ -27,17 +27,17 @@ def intsyntaxcheck(inputstatement):
         print("Only integers (1,43,532) are allowed!")
         return intsyntaxcheck(inputstatement)
 
-def stringvaluecontrol(permitttedvalues, inputstatement, errormessage):
+def stringvaluecontrol(listofpermitttedvalues, inputstatement, errormessage):
     inputval = input(inputstatement)
-    while inputval not in permitttedvalues:
+    while inputval not in listofpermitttedvalues:
         print(errormessage)
         inputval = input(inputstatement)
     return inputval
 
-def integervaluecontrol(permitttedvalues, inputstatement, errormessage):
+def integervaluecontrol(listofpermitttedvalues, inputstatement, errormessage):
     try:
         inputval = int(input(inputstatement))
-        while inputval not in permitttedvalues:
+        while inputval not in listofpermitttedvalues:
             print(errormessage)
             inputval = int(input(inputstatement))
     except ValueError:
