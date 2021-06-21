@@ -1,17 +1,6 @@
-from tabulate import tabulate
-
-def tabulating():
-    rawdata = cursor.fetchall()
-    listeddata = []
-    for data in rawdata:
-        listeddata.append(list(data))
-    return listeddata
-
-
-rawdata = cur.fetchall()
-newdata = []
-for data in rawdata:
-    newdata.append(list(data))
-
-print("The requested book is: ")
-print(tabulate(booksdata, headers=["Book Name", "Price", 'Available Stocks'], tablefmt='fancy_grid'))
+menu2 = '''How do you want to have the data displayed?
+    1. Just as it is
+    2. Ordering Books Name in Ascending Order
+    3. Ordering Books Name in Descending Order
+.....'''
+a = int(input(menu2))
