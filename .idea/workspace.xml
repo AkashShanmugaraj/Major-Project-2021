@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3392bb15-b176-42ea-bceb-9c129e805106" name="Default Changelist" comment="Some Deletion">
-      <change afterPath="$PROJECT_DIR$/Meetups/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQL Connection/func.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQL Connection/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sql files/sql_forlocalhost.sql" beforeDir="false" afterPath="$PROJECT_DIR$/.sql files/sql_forlocalhost.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adithya's Files/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Adithya's Files/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Barath's FIles/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Barath's FIles/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL Connection/sqlcommands.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/sqlcommands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SQL Connection" />
   </component>
   <component name="RecentsManager">
