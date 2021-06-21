@@ -41,6 +41,16 @@ To mask the password input
 pip install stdiomask
 ```
 
+Also these
+
+```
+pip install pyfiglet
+```
+
+```
+pip install keyboard
+```
+
 ## Applications used for Development
 
 The following application were used in the developmental stage
