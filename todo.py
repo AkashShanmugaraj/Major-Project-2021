@@ -10,9 +10,11 @@ TODO:
     8. Add Taxing options
     9. view transactions by date/period(only give 1 day, 1 week, 1 month, 3 months, 6 months, 1 year) or
     (get input of year, month and day; print data accordingly)
+    10. think of adding the print statement to tabulating function
+    11. think of proceed with normal html redirect rather than gif and css
 Solutions Found for:
 6. Use the below code
-
+11. home.html is the basic html version
 from os import system
 system('cls')
 Ref: https://www.geeksforgeeks.org/clear-screen-python/#:~:text=From%20os%20import%20system.,last%20output%20in%20an%20underscore).
