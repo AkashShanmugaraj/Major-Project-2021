@@ -68,3 +68,6 @@ The following application were used in the developmental stage
 ## License
 
 MIT License
+
+## Contact Us
+Email: vnbookstoremgmtapp@gmail.com
