@@ -1,13 +1,14 @@
 # This is the implementation of remote mysql and cmd_spin module
 # An additional module names stdiomask must be installed. It helps us to give the **** effect while the password is entered
 # The **** can be customised like XXXX or PPPP or anything
+# Note: The below file is directly connected to Remote MySQL Server and not your local instance. Database and Table structures may/maynot coincide.
 
 import mysql.connector as sql
 import mysql.connector.errors
 import stdiomask
 from cmd_spin import spin
 
-db = sql.connect(host='freedb.tech',database='freedbtech_mybookstorevnps',user='freedbtech_vnpsmajorproject', password='qwerty')
+db = sql.connect(host='libmgmt.heliohost.us',database='libmgmt_bookstore',user='libmgmt', password='nevermindmf')
 cur = db.cursor()
 
 def login():
