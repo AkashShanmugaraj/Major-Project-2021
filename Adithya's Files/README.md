@@ -13,12 +13,22 @@ This might be hard but this makes our work uniform and systematic.
 Please be aware that since you are new to programming, work assigning for you wont be as same as Barath's
 
 ## This week TODO's
-#### Last updated for 19th June - 26th June
+#### Last updated on August 02
 
-- Install `Pycharm`, `DBeaver`, `Github Desktop`
-- Gather insights about Sub Categories which are marked Thinking
-- Go Through the files on the repository [All floders except Adithya's Files]
+Create an Empolyee module system which must have the following details
+- 2 Tables, one for personal information and another for salary information
+- Personal info must have the following attributes:
+  - Employee ID
+  - Name
+  - Contact Info
+  - Address
 
-### Next week expected TODO's
+- Salary Information must have the following Attributes:
+  - Employee ID
+  - Name
+  - Salary (monthly)
 
-- Gather insights about Sub Categories which are marked Thinking
+Employee ID can be specified my user and user must be prompted to ask for **monthly salary**
+Do all this with your localhost MySQL and upload the python files to This folder _Major-Project-2021/Adithya's Files_
+
+Also you must develop an interface for connecting Python and MySQL to help the user add / edit / delete employees
