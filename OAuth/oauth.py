@@ -6,15 +6,15 @@
 from flask import Flask, redirect, url_for, session, jsonify, render_template
 from authlib.integrations.flask_client import OAuth
 import webbrowser
-import sys, os, signal
+import sys, os
 import logging
 import click
 
+
+somedict = {}
+#The below code until the next comment is for hiding the output
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
-
-sampleuid = ""
-samplename = ""
 
 def secho(text, file=None, nl=None, err=None, color=None, **styles):
     pass
@@ -25,8 +25,6 @@ def echo(text, file=None, nl=None, err=None, color=None, **styles):
 click.echo = echo
 click.secho = secho
 
-
-
 class HiddenPrints:
     def __enter__(self):
         self._original_stdout = sys.stdout
@@ -36,11 +34,13 @@ class HiddenPrints:
         sys.stdout.close()
         sys.stdout = self._original_stdout
 
-def theoauth(uemail, uname, flaskapp = Flask(__name__)):
+#Defining the flask app
+f_app = Flask(__name__)
+
+def theoauth(outdict,flaskapp = Flask(__name__)):
     flaskapp.secret_key = "something"
-
-
-    #Oauth Config
+    #Oauth Config.
+    #Client ID and Client Secret are the main parts which was retreived from cloud.google.com
     oauth = OAuth(flaskapp)
     google = oauth.register(
         name='google',
@@ -56,20 +56,23 @@ def theoauth(uemail, uname, flaskapp = Flask(__name__)):
     )
 
 
-    #The main screen (however, this will only appear after login was succeded)
+    #The main screen (however, this page wont appear at all)
+    #URL of this page will be "http://127.0.0.1:5000/"
     @flaskapp.route("/")
-    def hello():
+    def hlo():
         return 'Please go to http://127.0.0.1:5000/login'
 
 
     #Login Route
+    #URL of this page is "http://127.0.0.1:5000/login"
     @flaskapp.route('/login')
     def login():
         google = oauth.create_client('google')
         redirect_uri = url_for('authorize', _external=True)
-        return google.authorize_redirect(redirect_uri)
+        return google.authorize_redirect(redirect_uri) # This statement redirects our app to google's login page
 
     #Authorisation Route
+    #URL of this page is "http://127.0.0.1:5000/authorize"
     @flaskapp.route('/authorize')
     def authorize():
         google = oauth.create_client('google')
@@ -77,35 +80,15 @@ def theoauth(uemail, uname, flaskapp = Flask(__name__)):
         resp = google.get('userinfo')
         resp.raise_for_status()
         user_info = resp.json()
-        # do something with the token and profile
-        session['email'] = user_info['email']
-        session['name'] = user_info['name']
-        username = dict(user_info).get('name',None)
-        return redirect('/landing')
 
-    #Logout route
-    @flaskapp.route('/logout')
-    def logout():
-        for key in list(session.keys()):
-            session.pop(key)
-            return redirect('/')
+        # Inserting values into out dictionary from the OAuth Dictionary
+        outdict['email'] = user_info['email']
+        outdict['name'] = user_info['name']
 
-    #Close Route
-    @flaskapp.route('/landing')
-    def index():
-        return render_template('home.html')
-    @flaskapp.route('/closethistab')
-    def anopage():
-        uemail = dict(session).get("email", None)
-        uname = dict(session).get('name', None)
-        print(uemail, uname)
-        os.kill(os.getpid(), signal.SIGINT)
-        return jsonify({"success": True, "message": "Server is shutting down..."})
+        # Redirecting the user to app's website
+        return redirect('https://bstore21.heliohost.us/loginsucess.html')
 
 
+    webbrowser.open('http://127.0.0.1:5000/login')
+    flaskapp.run()
 
-    if __name__ == "__main__":
-        webbrowser.open('http://127.0.0.1:5000/login')
-        flaskapp.run()
-
-theoauth(sampleuid, samplename)
