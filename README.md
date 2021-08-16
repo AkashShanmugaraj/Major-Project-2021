@@ -56,7 +56,7 @@ pip install keyboard
 The following application were used in the developmental stage
 
 | Application | Purpose | Action |
-| ------ | ------ |
+| ------ | ------ | ------ |
 | [Pycharm](https://www.jetbrains.com/pycharm/) | Python Development and Markdown Editing | Install this |
 | [DataGrip](https://www.jetbrains.com/datagrip/) | Database Manipulation | No need to Install this | 
 | [DBeaver](https://dbeaver.io/) | Database Manipulation| Install this | Install this |
