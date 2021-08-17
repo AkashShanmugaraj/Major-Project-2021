@@ -55,14 +55,14 @@ pip install keyboard
 
 The following application were used in the developmental stage
 
-| Application | Purpose |
-| ------ | ------ |
-| [Pycharm](https://www.jetbrains.com/pycharm/) | Python Development and Markdown Editing |
-| [DataGrip](https://www.jetbrains.com/datagrip/) | Database Manipulation |
-| [DBeaver](https://dbeaver.io/) | Database Manipulation|
-| [FreeDB Tech](https://freedb.tech/) | Remote SQL Hosting Server |
-| [HelioHost](https://www.heliohost.org/) | Remote SQL Hosting Server |
-| [GitHub](https://github.com/) and [GitHub Desktop](https://desktop.github.com/) | For software development hosting and Version Control |
+| Application | Purpose | Action |
+| ------ | ------ | ------ |
+| [Pycharm](https://www.jetbrains.com/pycharm/) | Python Development and Markdown Editing | Install this |
+| [DataGrip](https://www.jetbrains.com/datagrip/) | Database Manipulation | No need to Install this | 
+| [DBeaver](https://dbeaver.io/) | Database Manipulation| Install this | Install this |
+| [FreeDB Tech](https://freedb.tech/) | Remote SQL Hosting Server | Website only |
+| [HelioHost](https://www.heliohost.org/) | Remote SQL Hosting Server | Website only |
+| [GitHub](https://github.com/) and [GitHub Desktop](https://desktop.github.com/) | For software development hosting and Version Control | Install Github Desktop |
 
 
 ## License
