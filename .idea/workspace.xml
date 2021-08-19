@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3392bb15-b176-42ea-bceb-9c129e805106" name="Default Changelist" comment="Some Deletion" />
+    <list default="true" id="3392bb15-b176-42ea-bceb-9c129e805106" name="Default Changelist" comment="Some Deletion">
+      <change afterPath="$PROJECT_DIR$/OAuth/encrypt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OAuth/glogin_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OAuth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OAuth/oauth.py" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/glogin_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OAuth/oauthusage.py" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/oauthusage.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +36,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
   <component name="ProjectId" id="1tSxBxrZppClYkcighPwzT5VGEJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,10 +49,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SQL Connection" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/OAuth" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\akash\Documents\GitHub\Major-Project-2021\OAuth" />
       <recent name="C:\Users\akash\Documents\GitHub\Major-Project-2021\SQL Connection" />
     </key>
   </component>
