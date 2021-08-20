@@ -24,7 +24,6 @@ def delete_emp():
 
     cur.execute(f"DELETE FROM employees WHERE EmpID='{empid}';")
 
-    return
 
 menu = '''
 What do you want do?
