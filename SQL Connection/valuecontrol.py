@@ -4,7 +4,7 @@
 #CASE1 - If the user enters a non numerical character, then program will immediately quit.
 #CASE2 - If he enters a number which is more than the books current stock, database will collapse
 #There fore in order to prevent the above cases, we have two functions below
-
+import os
 #Function for controlling what goes into the bookquantity feild
 #This function will act as a solution for both problem cases.
 def bookquantloop(availablebooks):
@@ -20,36 +20,104 @@ def bookquantloop(availablebooks):
 #Functions for Syntax Check
 #This function acts only as a syntax checker for integer datatype
 def intsyntaxcheck(inputstatement):
+
     try:
-        return int(input(inputstatement))
+        a = input(inputstatement)
+        if a in ['\\back', '\\home']:
+            print('Exceptions Called')
+        else:
+            a = int(a)
+            return a
 
     except ValueError:
         print("Only integers (1,43,532) are allowed!")
-        return intsyntaxcheck(inputstatement)
+        a = intsyntaxcheck(inputstatement)
+        return a
 
-def stringvaluecontrol(listofpermitttedvalues, inputstatement, errormessage):
+def stringvaluecontrol(listofpermitttedvalues, inputstatement, errormessage, homefunc = None):
     inputval = input(inputstatement)
+
     while inputval not in listofpermitttedvalues:
         print(errormessage)
         inputval = input(inputstatement)
-    return inputval
 
-def integervaluecontrol(listofpermitttedvalues, inputstatement, errormessage):
+    if inputval == '\\home':
+        if homefunc == None:
+            print('Navigation Commands are not permitted here.')
+            val2 = stringvaluecontrol(listofpermitttedvalues, inputstatement, errormessage, homefunc)
+            return val2
+        else:
+            os.system('cls')
+            homefunc()
+    elif inputval == '\\quit':
+        quit()
+    else:
+        return inputval
+
+def integervaluecontrol(listofpermitttedvalues, inputstatement, errormessage, homefunc = None):
+    strlist = []
+    for i in listofpermitttedvalues:
+        strlist.append(str(i))
     try:
-        inputval = int(input(inputstatement))
-        while inputval not in listofpermitttedvalues:
-            print(errormessage)
-            inputval = int(input(inputstatement))
+        inputval = (input(inputstatement))
+        if inputval == '\\home':
+            if homefunc == None:
+                print('Navigation Commands are not permitted here.')
+                val2 = integervaluecontrol(listofpermitttedvalues, inputstatement, errormessage,homefunc)
+                return val2
+            else:
+                os.system('cls')
+                homefunc()
+
+        elif inputval == '\\quit':
+            quit()
+        else:
+            inputval = int(inputval)
+            while inputval not in listofpermitttedvalues:
+                print(errormessage)
+                inputval = integervaluecontrol(listofpermitttedvalues, inputstatement,errormessage)
+
+
     except ValueError:
         print("Only integral values are allowed!")
-        inputval = integervaluecontrol(permitttedvalues,inputstatement,errormessage)
+        inputval = integervaluecontrol(listofpermitttedvalues,inputstatement,errormessage)
     return inputval
-#FUNCTION CALLING
-'''print("Now the bookquantloop function is being called....")
-bookquantloop(availablebooks=100)
-print("\n\n")
-print("Now the intsyntaxcheck function is being called....")
-print(intsyntaxcheck("Your Custom Text: "))
-stringinput = stringvaluecontrol(["Akash", "VNPS"], "Enter a string Value: ", "Only Akash and VNPS are Available!")
-integerintput = integervaluecontrol([1,2,4], "Enter an integral Value: ", "Only 1,2 and 4 are Available!")
-print(stringinput, integerintput)'''
+
+def stringnavigation(inputstatement,homefunc = None):
+    val = input(inputstatement)
+    if val == '\\home':
+        if homefunc == None:
+            print('Navigation Commands are not permitted here.')
+            val2 = stringnavigation(inputstatement, homefunc)
+            return val2
+        else:
+            os.system('cls')
+            homefunc()
+
+    elif val == '\\quit':
+        quit()
+    else:
+        return val
+
+def integernavigation(inputstatement,homefunc = None):
+    try:
+        inputval = input(inputstatement)
+        if inputval == '\\home':
+            if homefunc == None:
+                print('Navigation Commands are not permitted here.')
+                val2 = integernavigation(inputstatement, homefunc)
+                return val2
+            else:
+                os.system('cls')
+                homefunc()
+
+        elif inputval == '\\quit':
+            quit()
+        else:
+            inputval = int(inputval)
+            return inputval
+
+    except ValueError:
+        print("Only integers (1,43,532) are allowed!")
+        inputval = integernavigation(inputstatement, homefunc)
+        return inputval
