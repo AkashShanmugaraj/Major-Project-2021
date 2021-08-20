@@ -6,7 +6,7 @@
 import mysql.connector as mysql
 #Userdefined....found in same folder
 from tabulate import tabulate #For tabulating data
-from loops import *
+from valuecontrol import *
 from cmd_spin import spin
 #Python Modules
 from datetime import datetime
