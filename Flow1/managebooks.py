@@ -1,23 +1,23 @@
-# Importing required Modules
-import os
-import time
-from isbn import get_isbn_details
-import mysql.connector as mysql
+# managebooks.py
 
+# Importing required Modules
+from isbn import get_isbn_details
 from valuecontrol import *
 from plot import plottable
 
-# Connecting to the database
+# Function to unpack list inside tuple
 def listconv(inlist):
     sl = []
     for i in range(0,len(inlist)):
         sl.append(inlist[i][0])
     return sl
 
+# Function to Add a Book into the database
 def add_book(database, cursor, homef):
     print('Adding a Book')
     # Getting details from Google Books API
-    details = get_isbn_details()
+    theisbn = stringnavigation('Enter ISBN of the book: ', homefunc=lambda: booksmenu(database, cursor, homef))
+    details = get_isbn_details(theisbn)
 
     # Getting existing ISBN's in the database,
     cursor.execute('select ISBN from books2')
@@ -28,7 +28,8 @@ def add_book(database, cursor, homef):
     while int(details[3]) in existingIBSN:
         os.system('cls')
         print('That ISBN is already there in your store. Try another one')
-        details = get_isbn_details()
+        theisbn = stringnavigation('Enter ISBN of the book: ', homefunc= lambda: booksmenu(database, cursor, homef))
+        details = get_isbn_details(theisbn)
 
     # Converting it to a list
     tabulatingdetails = [details]
@@ -79,6 +80,7 @@ def add_book(database, cursor, homef):
     os.system('cls')
     booksmenu(database, cursor, homef)
 
+# Funciton to edit a book which is already existing in the Database
 def edit_book(database, cursor, homef):
     menu = '''What do you want to do?
     1. Edit only Book ID, Stocks and Price
@@ -120,6 +122,7 @@ def edit_book(database, cursor, homef):
     os.system('cls')
     booksmenu(database, cursor, homef)
 
+# Function to Delete a Database
 def delete_book(database, cursor, homef):
     cursor.execute('select BookID from books2')
     existing_BID = (listconv(cursor.fetchall()))
@@ -143,6 +146,7 @@ def delete_book(database, cursor, homef):
     os.system('cls')
     booksmenu(database, cursor,homef)
 
+# Function to view Books in the database
 def viewbooks(database, cursor, homef):
     menu2 = '''How do you want to have the data displayed?
     1. Just as it is
@@ -168,7 +172,7 @@ def viewbooks(database, cursor, homef):
     os.system('cls')
     booksmenu(database, cursor, homef)
 
-
+# Local Menu for the managebooks.py
 def booksmenu(database, cursor, hfunc = None):
 
     print('The home function now is', hfunc)

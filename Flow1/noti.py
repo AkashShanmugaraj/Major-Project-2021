@@ -1,11 +1,11 @@
+#noti.py
+
+# Importing necessary modules
 import mysql.connector as mysql
-import os
 from valuecontrol import *
 
-
-def notiview():
-    db = mysql.connect(host='34.136.39.136', user='root', password='cN2zEh4g2PBxwiK7', database='bstore21')
-    cur = db.cursor()
+# Function to display existing notifications
+def notiview(db,cur):
     cur.execute('select * from notification where seenvar is not null')
     unseendata = cur.fetchall()
     for i in unseendata:

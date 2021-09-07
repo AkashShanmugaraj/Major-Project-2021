@@ -1,12 +1,9 @@
-# This is the module for Google Login. It is made using flask
-# Flask can be understood easily but we need to think about the echo and secho
-# The templates folder is a must. It cannot be deleted
-# This prints out the Email and Password. BUt code can be modifed to change it
+# glogin_register.py
 
-from flask import Flask, redirect, url_for
+from flask import Flask, url_for
 from authlib.integrations.flask_client import OAuth
 import webbrowser
-import sys, os, signal
+import sys, signal
 import logging
 import click
 from encrypt import savecred
@@ -39,10 +36,10 @@ class HiddenPrints:
 f_app = Flask(__name__)
 
 # MySQL Connection
-db = mysql.connect(host = 'libmgmt.heliohost.us', user = 'libmgmt', password = 'nevermindmf', database = 'libmgmt_bookstore')
+db = mysql.connect(host = '34.136.39.136', user = 'root', password = 'cN2zEh4g2PBxwiK7', database = 'bstore21')
 cur = db.cursor()
 
-
+# Same function as glogin_login.py but a separate file
 def theoauth(flaskapp = Flask(__name__)):
     flaskapp.secret_key = "something"
     #Oauth Config.
@@ -106,10 +103,11 @@ def theoauth(flaskapp = Flask(__name__)):
 
 
 
-
+    # Opening the login route
     webbrowser.open('http://127.0.0.1:5000/login')
     flaskapp.run()
 
+# Function to get unique username
 def getusername():
     cur.execute('select username from credentials')
     usernames = cur.fetchall()
@@ -122,4 +120,6 @@ def getusername():
         uname = stringnavigation('')
 
     return uname
+
+# Function call
 theoauth()

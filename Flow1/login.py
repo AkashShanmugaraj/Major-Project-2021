@@ -1,5 +1,6 @@
+# login.py
 # Importing required modules
-import time,random
+import random
 import mysql.connector as mysql
 from os import system, getcwd
 import smtplib
@@ -8,11 +9,13 @@ import subprocess
 from valuecontrol import *
 
 # Database Connection
-db = mysql.connect(host = 'localhost', user = 'root', password = 'nevermindmf', database = 'bstorev2')
+db = mysql.connect(host = '34.136.39.136', user = 'root', password = 'cN2zEh4g2PBxwiK7', database = 'bstore21')
 
 cur = db.cursor()
 
 cur.execute('select email from credentials')
+
+# Function to unpack tuples inside a list
 def tupletolist(thetuple):
     newlist = []
     for i in thetuple:
@@ -20,7 +23,6 @@ def tupletolist(thetuple):
             newlist.append(ii)
     return newlist
 allemails = tupletolist(cur.fetchall())
-
 
 
 # Function to send OTP
@@ -45,14 +47,12 @@ def sendotp(tomail):
 
     return otp
 
-
+# Normal Login function
 def login(hfunc):
     system('cls')
     print('Here')
     username = stringnavigation('Enter Username: ', homefunc= lambda: loginhome(hfunc))
     password = stringnavigation('Enter Password: ', homefunc= lambda: loginhome(hfunc))
-    #username = input('Enter username: ')
-    #password = input('Enter password: ')
     cur.execute(f'select password from credentials where username = "{username}"')
     out = cur.fetchall()
     if out == []:
@@ -64,8 +64,7 @@ def login(hfunc):
         data = cur.fetchall()
         savecred(username, data[0][0], data[0][1])
 
-def login2(hfunc):
-    system('cls')
+# Normal Register function
 def register(hfunc):
     system('cls')
 
@@ -102,7 +101,7 @@ def register(hfunc):
     db.commit()
     print('User was registered Sucessfully')
 
-
+# Local menu for login.py
 def loginhome(redirectfunc = None):
     menu = '''How would you want to login?
 1. Login Normally

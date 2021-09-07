@@ -1,16 +1,20 @@
-import mysql.connector as mysql
+# employee.py
+# Importing required modules
+
 from tabulate import tabulate
 from valuecontrol import stringvaluecontrol, integervaluecontrol, stringnavigation, integernavigation
 from os import system
 from time import sleep
 from plot import plottable
 
+# Function to unpack tuples inside a list
 def listcov(inlist):
     sl = []
     for i in range(0,len(inlist)):
         sl.append(inlist[i][0])
     return sl
 
+# Function to add employee
 def add_emp(database, cursor, homef):
     # Getting list of all Existing Employee ID's
     cursor.execute('select EmpID from employees')
@@ -38,6 +42,7 @@ def add_emp(database, cursor, homef):
     system('cls')
     emphome(database, cursor, homef)
 
+# Function to edit employees
 def edit_emp(database, cursor, homef):
     # Fetching all Employee ID's
     cursor.execute('select empid from employees')
@@ -68,7 +73,7 @@ def edit_emp(database, cursor, homef):
     system('cls')
     emphome(database, cursor, homef)
 
-
+# Function to delete employee
 def del_emp(database, cursor,homef):
     # Selecting Existing Employee ID's
     cursor.execute('select empid from employees')
@@ -93,6 +98,7 @@ def del_emp(database, cursor,homef):
     system('cls')
     emphome(database, cursor,homef)
 
+# Function to view a list of employees
 def view_emp(database, cursor, homef):
     # Printing all info about employees
     cursor.execute(f"select * from employees")
@@ -102,6 +108,7 @@ def view_emp(database, cursor, homef):
     system('cls')
     emphome(database, cursor, homef)
 
+# Local menu for employee.py
 def emphome(database,cursor, hfunc = None):
 
     menu = '''What would you like to do with your employee data?

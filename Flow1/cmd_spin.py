@@ -1,6 +1,4 @@
-# This module is used to create a spin effect or loading animation which is certainly cool
-# The statement can be customised by providing any string parameter inside the spin function
-
+# cmd_spin.py
 def spin(statement):
     import time
     symb = ["/","-","\\", "|"]

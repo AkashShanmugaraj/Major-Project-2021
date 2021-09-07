@@ -1,17 +1,12 @@
+# isbn.py
+
+# Importing required modules
 import urllib.request
 import json
 from valuecontrol import stringnavigation
 
-
-def tryexception(dict,key):
-    try:
-        return dict[key]
-    except KeyError:
-        return 'N/A'
-
-
-def get_isbn_details():
-    isbn = stringnavigation('Enter ISBN: ')
+# Function to fetch book details from Google Books Directory using API
+def get_isbn_details(isbn):
     api_link = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn
     with urllib.request.urlopen(api_link) as f:
         text = f.read()
@@ -32,17 +27,17 @@ def get_isbn_details():
         bookinfo = bookdict['items'][0]['volumeInfo']
         # print(volume_info)
         print("\n\n")
-        authors = tryexception(bookinfo, "authors")
+        authors = bookinfo.get('authors', 'N/A')
         if authors == 'N/A':
             pass
         else:
             authors = ",".join(authors)
-        category = tryexception(bookinfo, "categories")
+        category = bookinfo.get('categories', 'N/A')
         if category == 'N/A':
             pass
         else:
             category = ",".join(category)
 
-        outlist = [tryexception(bookinfo, 'title'), authors, category, isbn,tryexception(bookinfo, 'publisher'),
-                   tryexception(bookinfo, 'publishedDate')]
+        outlist = [bookinfo.get('title', 'N/A'), authors, category, isbn,bookinfo.get('publisher', 'N/A'),
+                   bookinfo.get('publishedDate', 'N/A')]
         return outlist

@@ -1,5 +1,7 @@
-from tabulate import tabulate
+# managetransactions.py
 
+# Importing necessary modules
+from tabulate import tabulate
 from valuecontrol import *
 from cmd_spin import spin
 import random
@@ -34,7 +36,7 @@ def transidgen(cursor):
     return num
 
 
-
+# Function to create a new transaction
 def newtransaction(database, cursor,homef):
     # Fetching  Exisiting BookID's
     cursor.execute("select BookID from books2;")
@@ -91,7 +93,8 @@ def viewtransaction(database, cursor, homef):
     conf = stringvaluecontrol(['y'],"Press y when you are ready to be redirected to the home screen", "Please give in a valid response",homefunc=lambda: transhome(database, cursor, homef))
     system('cls')
     transhome(database, cursor, homef)
-# Function for Local Home
+
+# Local menu for managetrasactions.py
 def transhome(database, cursor, hfunc = None):
 
     menu = '''What do you want to do?

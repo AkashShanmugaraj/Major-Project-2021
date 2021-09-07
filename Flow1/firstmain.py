@@ -1,6 +1,6 @@
-import os
-import time
+# main.py
 
+# Importing required packages and mainmenus of modules
 from encrypt import readcred
 from login import loginhome
 import mysql.connector as mysql
@@ -22,6 +22,7 @@ cur.execute('select * from notification where seenvar is not null')
 unseendata = cur.fetchall()
 totalunseen = len(unseendata)
 
+# Main menu of the whole application
 def menuf():
     fname = readcred()['name']
     os.system('cls')
@@ -47,7 +48,7 @@ def menuf():
         emphome(db, cur,hfunc = menuf)
     elif q == 4:
         os.system('cls')
-        notiview()
+        notiview(db,cur)
         menuf()
     elif q == 5:
         os.system('cls')
@@ -58,6 +59,8 @@ def menuf():
         quitprint()
 os.system('cls')
 printart()
+
+# Checking for recently saved credential
 if readcred() == False:
     print('You have not logged in yet.')
     loginhome(menuf)

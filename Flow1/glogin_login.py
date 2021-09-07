@@ -1,6 +1,6 @@
-# This is the module for Google Login. It is made using flask
-# Flask can be understood easily but we need to think about the echo and secho
+# glogin_login.py
 
+# Importing required packages
 from flask import Flask, url_for
 from authlib.integrations.flask_client import OAuth
 import webbrowser
@@ -9,11 +9,7 @@ import logging
 import click
 from encrypt import savecred
 import mysql.connector as mysql
-import json
-from valuecontrol import stringnavigation
 
-
-somedict = {}
 #The below code until the next comment is for hiding the output
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
@@ -98,8 +94,10 @@ def theoauth(flaskapp = Flask(__name__)):
 
         return 'OK'
 
-
+    # Opening the login route
     webbrowser.open('http://127.0.0.1:5000/login')
+    # Staring the flask app
     flaskapp.run()
 
+# Function call
 theoauth()
