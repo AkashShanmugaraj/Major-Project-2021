@@ -25,4 +25,15 @@ def home():
     elif val == 3:
         facfun()
 
-home()
+#home()
+
+
+def listcov(inlist):
+    sl = []
+    for i in range(0,len(inlist)):
+        print(inlist[0][i])
+        sl.append(inlist[0][i])
+    return sl
+
+a = [('A', 13, 12)]
+print(listcov(a))
