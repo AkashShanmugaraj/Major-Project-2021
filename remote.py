@@ -12,6 +12,5 @@ PASSWORD = "nevermindmf"
 db = mysql.connect(host=HOST, database=DATABASE, user=USER, password=PASSWORD)
 print("Connected to:", db.get_server_info())
 cur = db.cursor()
-cur.execute("show databases;")
+cur.execute("SHOW VARIABLES LIKE 'max_connections';")
 print(cur.fetchall())
-print('hello')
