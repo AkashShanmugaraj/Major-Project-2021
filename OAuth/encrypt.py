@@ -1,7 +1,7 @@
 from cryptography.fernet import Fernet
 import json
 import cryptocode
-import os,signal
+
 key = Fernet.generate_key()
 fernet = Fernet(key)
 
@@ -27,5 +27,4 @@ def readcred():
         return decodeddict
     except FileNotFoundError:
         return False
-a = input('Enter something: ')
-print(a)
+print(readcred())
