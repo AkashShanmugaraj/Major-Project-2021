@@ -1,10 +1,11 @@
-# This program needs some more major changes
 
 import time,random
 import mysql.connector as mysql
-from os import system
+from os import system, getcwd
 import smtplib
-
+from glogin_login import theoauth as glogin
+from glogin_register import theoauth as gregister
+import subprocess
 
 # Database Connection
 db = mysql.connect(host = 'localhost', username = 'root', password = 'nevermindmf', database = 'bstorev2')
@@ -85,11 +86,16 @@ def register():
     db.commit()
     print('User was registered Sucessfully')
 
+
 q = int(input(menu))
 if q == 1:
     login()
+elif q == 2:
+    subprocess.call(['python', f"{getcwd()}\glogin_login.py"])
 elif q == 3:
     register()
+elif q == 4:
+    gregister()
 
 time.sleep(10)
 
