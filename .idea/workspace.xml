@@ -4,7 +4,19 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3392bb15-b176-42ea-bceb-9c129e805106" name="Default Changelist" comment="Some Deletion" />
+    <list default="true" id="3392bb15-b176-42ea-bceb-9c129e805106" name="Default Changelist" comment="Some Deletion">
+      <change afterPath="$PROJECT_DIR$/Django/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Others/firebase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Google Books API/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/Google Books API/script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/noti.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/noti.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notification/notigui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notification/notigui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OAuth/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/encrypt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OAuth/glogin_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/glogin_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OAuth/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL Connection/valuecontrolusage.py" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Connection/valuecontrolusage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote.py" beforeDir="false" afterPath="$PROJECT_DIR$/remote.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/OAuth" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Practical12" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
