@@ -10,10 +10,6 @@ Upon Completion it will be made available to all
 
 See [Akash's website](https://akashshanmugaraj.wixsite.com/home) 
 
-> This is the best ever commandline app the world has ever seen
-> 
-> ~GeeksforGeeks
-
 ## Installation
 Some modules are required if you prefer to run the `.py` script directly. Dependencies are optional in `.exe` file
 
